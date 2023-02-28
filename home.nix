@@ -10,11 +10,11 @@
 
     # Development
       tree-sitter
+      cargo
 
     # Rust TUI/CLI Tools! I love rust.
       exa
       bat
-      zoxide
       broot
       fd
       ripgrep
@@ -32,7 +32,7 @@
 
       nodePackages.typescript # ts
       nodePackages.typescript-language-server # ts lsp
-      nodePackages.vscode-langservers-extracted # vscode lsp (html,css)
+      nodePackages.vscode-langservers-extracted # 
       nodePackages.bash-language-server # bash lsp    
     
       thefuck
@@ -86,9 +86,33 @@
       settings = {
         theme = "onedark";
         editor = {
-        #  line-number = "relative";
+          bufferline = "multiple";
+          true-color = true;
+          color-modes = true;
+          cursorline = true;
+          cursor-shape = {
+            insert = "bar";
+            normal = "block";
+            select = "underline";
+          };
+          indent-guides = {
+            render = true;
+            rainbow-option = "bright";
+          };
           statusline = {
+            left = ["mode" "spacer" "separator" "spacer" "spinner" "position-percentage" "spacer" "total-line-numbers"];
+            center = ["file-name" "spacer" "diagnostics"];
+            right = ["selections" "position" "file-type" "spacer"];
             separator = "|";
+            mode = {
+              normal = "NORMAL";
+              insert = "INSERT";
+              select = "SELECT";
+            };
+          };
+          whitespace.characters = {
+            newline = "↴";
+            tab = "⇥";
           };
         };
       };
