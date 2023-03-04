@@ -22,7 +22,7 @@
 
     # GUI
       blackbox-terminal
-      aseprite
+      # aseprite
 
     # Language & Lsp
       nodejs # js
@@ -34,6 +34,8 @@
       nodePackages.typescript-language-server # ts lsp
       nodePackages.vscode-langservers-extracted # 
       nodePackages.bash-language-server # bash lsp    
+
+      nodePackages.pnpm
     
       thefuck
       # https://github.com/franciscolourenco/done
@@ -47,7 +49,7 @@
     ];
 
     stateVersion = "22.11";
-  };
+  };  
 
   programs = {
 
@@ -59,12 +61,12 @@
     tealdeer = {
       enable = true ;
       settings = {
-      display = {
-        compact = true;
-      };
-      updates = {
-        auto_update = true;
-      };
+        display = {
+          compact = true;
+        };
+        updates = {
+          auto_update = true;
+        };
       };
     };
 
@@ -176,11 +178,6 @@
         };
         nix_shell = {
           format = " [$symbol$state]($style) ";
-        };
-        battery = {
-          full_symbol = "🔋 ";
-          charging_symbol = "⚡️ ";
-          discharging_symbol = "💀 ";
         };
         git_branch = {
           format = "[$symbol$branch]($style) ";
